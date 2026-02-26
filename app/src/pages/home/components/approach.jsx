@@ -1,116 +1,113 @@
 import React from 'react';
 
-const ApproachSection = () => {
-  const approaches = [
+const ProjectTryPremium = () => {
+  const steps = [
     {
-      title: "Child-Centered Learning",
-      description: "We put children at the heart of every program, ensuring they move beyond attendance to true mastery.",
-      detail: "Literacy & Numeracy focus"
+      id: "01",
+      title: "The Foundation",
+      subtitle: "PHASE 1",
+      desc: "Aggressively rebuilding missing reading and math skills using \"Teaching at the Right Level.\"",
+      color: "#EF4444", // Red
+      status: "🔴"
     },
     {
-      title: "Strengthening Teachers",
-      description: "Equipping educators with mentorship and resources to turn classrooms into hubs of possibility.",
-      detail: "Professional Development"
+      id: "02",
+      title: "The Bridge",
+      subtitle: "PHASE 2",
+      desc: "Helping students tackle their current school syllabus and pass their board exams with confidence.",
+      color: "#FFD700", // Golden Yellow
+      status: "🟡"
     },
     {
-      title: "Beyond School Hours",
-      description: "Reimagined after-school programs that nurture leadership, creativity, and self-confidence.",
-      detail: "Holistic Growth"
-    },
-    {
-      title: "Community Involvement",
-      description: "Engaging parents and local leaders to build a resilient support system for every child.",
-      detail: "Ecosystem Support"
-    },
-    {
-      title: "Innovation with Purpose",
-      description: "Adapting new tools and methodologies to keep education impactful in a digital age.",
-      detail: "Scalable Solutions"
+      id: "03",
+      title: "The Launchpad",
+      subtitle: "PHASE 3",
+      desc: "Unlocking 21st-century upskilling like AI, Coding, Robotics, and career mentorship.",
+      color: "#2D6A4F", // Fresh Green
+      status: "🟢"
     }
   ];
 
-  const sdgs = [3, 4, 8, 10, 11, 12];
-
   return (
-    <section className="bg-white py-32 px-6 antialiased selection:bg-neutral-900 selection:text-white">
+    <section className="relative w-full bg-[#FAFAFA] py-24 px-6 lg:py-40 antialiased overflow-hidden">
+      {/* Decorative Background Element */}
+      <div className="pointer-events-none absolute -right-20 top-0 text-[20vw] font-black leading-none text-[#0A192F]/[0.02] uppercase select-none">
+        Ascent
+      </div>
+
       <div className="mx-auto max-w-7xl">
-        
-        {/* Header - High-End Editorial Style */}
-        <div className="mb-24 flex flex-col items-start gap-10 lg:flex-row lg:items-end">
-          <div className="flex-1">
-            <h2 className="text-[10px] uppercase tracking-[0.6em] text-neutral-400 mb-6 font-bold">Strategy</h2>
-            <h3 className="text-5xl font-extralight tracking-tighter text-neutral-900 md:text-8xl">
-              Our <span className="italic font-serif">Holistic</span> Approach.
-            </h3>
-          </div>
-          <div className="max-w-md pb-4">
-            <p className="text-lg font-light leading-relaxed text-neutral-500 italic border-l-2 border-neutral-900 pl-6">
-              "Solving the crisis requires more than short-term fixes; it needs a strategy that transforms classrooms and uplifts communities."
-            </p>
-          </div>
-        </div>
-
-        {/* Approach Cards - Dynamic Grid */}
-        <div className="grid grid-cols-1 gap-px bg-neutral-100 border border-neutral-100 md:grid-cols-2 lg:grid-cols-3">
-          {approaches.map((item, idx) => (
-            <div 
-              key={idx} 
-              className="group relative bg-white p-12 transition-all duration-500 hover:z-10 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.1)]"
-            >
-              <span className="text-[10px] font-mono text-neutral-300">MODAL_{idx + 1}</span>
-              <h4 className="mt-8 text-2xl font-light tracking-tight text-neutral-900 transition-colors group-hover:text-orange-600">
-                {item.title}
-              </h4>
-              <p className="mt-6 text-sm leading-relaxed text-neutral-500">
-                {item.description}
-              </p>
-              <div className="mt-8 flex items-center gap-2 opacity-0 transition-opacity group-hover:opacity-100">
-                <span className="h-[1px] w-4 bg-neutral-900"></span>
-                <span className="text-[9px] font-black uppercase tracking-widest text-neutral-900">{item.detail}</span>
-              </div>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
           
-          {/* Decorative Callout Card */}
-          <div className="hidden lg:flex bg-neutral-950 p-12 flex-col justify-center text-white">
-            <p className="text-sm font-light leading-relaxed opacity-70">
-              Our initiatives are meticulously designed to scale impact across North Bengaluru's most vulnerable zones.
+          {/* Left Column: Sticky Narrative */}
+          <div className="lg:col-span-5 lg:sticky lg:top-40 lg:h-fit">
+            <span className="text-[10px] font-bold uppercase tracking-[0.6em] text-[#0A192F]/40">
+              The Solution
+            </span>
+            <h2 className="mt-8 text-6xl font-extralight leading-[0.95] tracking-tighter text-[#0A192F] sm:text-7xl xl:text-8xl">
+              Introducing <br />
+              <span className="italic font-serif text-[#0A192F]">Project TRY</span>
+            </h2>
+            <p className="mt-6 text-[10px] uppercase tracking-widest text-[#0A192F]/40">
+              (Time to Re-Invent Yourself)
             </p>
-            <button className="mt-8 text-left text-[10px] font-bold uppercase tracking-[0.3em] hover:text-orange-400 transition-colors">
-              Explore Our Data →
-            </button>
+            <div className="mt-10 h-[1px] w-20 bg-[#0A192F]"></div>
+            <p className="mt-10 max-w-sm text-lg leading-relaxed tracking-tight text-[#0A192F]/70">
+              We don’t just offer generic homework help. Project TRY is a rigorous, 3-Phase after-school journey designed to completely transform a student's trajectory.
+            </p>
           </div>
-        </div>
 
-        {/* SDG Section - Premium Badges */}
-        <div className="mt-32 pt-16 border-t border-neutral-100">
-          <div className="flex flex-col items-center justify-between gap-12 lg:flex-row">
-            <div>
-              <p className="text-[10px] uppercase tracking-[0.4em] text-neutral-400 mb-2">Global Alignment</p>
-              <h4 className="text-xl font-light text-neutral-900">United Nations Sustainable Development Goals</h4>
-            </div>
-            
-            <div className="flex flex-wrap justify-center gap-4">
-              {sdgs.map((num) => (
-                <div key={num} className="group relative h-16 w-16 overflow-hidden rounded-lg bg-neutral-50 border border-neutral-100 grayscale transition-all hover:grayscale-0 hover:scale-110">
-                  <img 
-                    src={`https://raw.githubusercontent.com/UNStats/SDGs/master/logos/goal-${num}.png`} 
-                    alt={`SDG ${num}`}
-                    className="h-full w-full object-contain p-2"
-                  />
-                  {/* Tooltip on hover */}
-                  <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="text-white font-bold text-xs">Goal {num}</span>
+          {/* Right Column: The 3-Phase Ascent */}
+          <div className="lg:col-span-7 space-y-24 lg:space-y-40">
+            {steps.map((step, idx) => (
+              <div key={idx} className="group relative pl-12 lg:pl-20">
+                
+                {/* Vertical Accent Line */}
+                <div className="absolute left-0 top-0 h-full w-[1px] bg-neutral-200">
+                  <div 
+                    className="absolute top-0 left-0 w-full h-0 transition-all duration-1000 ease-out group-hover:h-full" 
+                    style={{ backgroundColor: step.color }}
+                  ></div>
+                </div>
+
+                <div className="relative">
+                  {/* Floating Number Label */}
+                  <span className="absolute -left-12 lg:-left-24 top-0 text-6xl font-black leading-none text-[#0A192F]/[0.04] lg:text-8xl transition-colors group-hover:text-[#0A192F]/10">
+                    {step.id}
+                  </span>
+                  
+                  <div className="flex items-center gap-3 mb-6">
+                    <span className="text-sm">{step.status}</span>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-neutral-400">
+                      {step.subtitle}
+                    </span>
+                  </div>
+
+                  <h3 className="text-3xl font-light tracking-tight text-[#0A192F] sm:text-5xl">
+                    {step.title}
+                  </h3>
+
+                  <p className="mt-6 max-w-lg text-lg leading-relaxed text-[#0A192F]/60">
+                    {step.desc}
+                  </p>
+
+                  {/* Aesthetic Detail: Phase Indicator */}
+                  <div className="mt-12 flex items-center gap-4">
+                    <div 
+                      className="h-1 w-12 transition-all duration-500 group-hover:w-20" 
+                      style={{ backgroundColor: step.color }}
+                    ></div>
+                    <span className="text-[9px] font-black uppercase tracking-widest text-[#0A192F]">
+                      Ascent Module {step.id}
+                    </span>
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
-
       </div>
     </section>
   );
 };
 
-export default ApproachSection;
+export default ProjectTryPremium;
