@@ -1,92 +1,52 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Sparkles, ArrowUpRight, ArrowRight, Play } from 'lucide-react';
-import Navbar from "../../../components/nav";
-const transition = { duration: 1.2, ease: [0.22, 1, 0.36, 1] };
+import React from 'react';
 
-const HyperPremiumHero = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
+const AboutHeroBalanced = () => {
   return (
-    <div className="relative min-h-screen bg-[#FAF9F6] overflow-hidden selection:bg-amber-200">
+    /* Height is set to 80vh to perfectly complement your 20vh Nav. 
+       This ensures the entire Hero is visible on page load without scrolling.
+    */
+    <section className="relative flex h-[100vh] w-full flex-col items-center justify-center overflow-hidden bg-[#0A192F] px-6 lg:px-12 antialiased">
       
-      {/* --- FLOATING AMBIENT LIGHTS --- */}
-      <div className="absolute top-[-10%] right-[-10%] w-[800px] h-[800px] bg-amber-100/50 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] bg-slate-200/40 rounded-full blur-[100px] pointer-events-none" />
+      {/* Background: Abstract Depth */}
+      <div className="absolute inset-0 z-0">
+        {/* Subtle radial light source representing "The Lamp" */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-full w-full bg-[radial-gradient(circle_at_50%_50%,_#1B4332_0%,_transparent_70%)] opacity-20"></div>
+        <div className="absolute inset-0 opacity-[0.02] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+      </div>
 
-      
-      {/* --- NAVBAR --- */}
-      <Navbar  />
-      {/* --- HERO MAIN CONTENT --- */}
-      <main className="mt-20 relative z-10 max-w-7xl mx-auto px-6 min-h-screen flex flex-col justify-center">
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
-          
-          {/* LEFT COLUMN: TEXT CONTENT */}
-          <div className="lg:col-span-8">
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={transition}
-            >
-              <div className="flex items-center gap-4 mb-10">
-                <span className="h-[1px] w-12 bg-amber-500/50" />
-                <span className="text-[11px] font-black uppercase tracking-[0.5em] text-amber-600">Established 2019 • Bengaluru</span>
-              </div>
+      {/* Content: Framed by the 80vh height */}
+      <div className="relative z-10 mt-20 flex h-full w-full max-w-[1440px] flex-col justify-between py-12 lg:py-16">
+        
 
-              <h1 className="text-7xl md:text-[160px] font-black leading-[0.75] tracking-tighter text-slate-900 uppercase">
-                Potential <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-orange-500 to-amber-600 italic font-serif lowercase pr-4">
-                  reinvented.
-                </span>
-              </h1>
-
-              <p className="mt-16 max-w-xl text-xl md:text-2xl text-slate-500 font-medium leading-relaxed">
-                Beyond the divide of poverty lies a <span className="text-slate-900 font-bold underline decoration-amber-400/40 underline-offset-8">world of brilliance</span>. 
-                We reinvent foundational education to turn second chances into lifelong mastery.
-              </p>
-
-              <div className="mt-20 flex flex-wrap items-center gap-10">
-                <button className="bg-slate-900 text-white px-14 py-8 rounded-[2rem] font-black uppercase text-xs tracking-widest hover:bg-amber-400 hover:text-slate-900 transition-all flex items-center gap-6 group shadow-2xl shadow-slate-300 transform active:scale-95">
-                  Launch Programs 
-                  <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center group-hover:bg-slate-900/10 transition-all">
-                    <ArrowUpRight className="w-5 h-5" />
-                  </div>
-                </button>
-                
-                <button className="flex items-center gap-5 group">
-                  <div className="w-20 h-20 rounded-full border border-slate-200 flex items-center justify-center group-hover:bg-white group-hover:border-white group-hover:shadow-2xl transition-all duration-500">
-                    <Play className="w-6 h-6 fill-slate-900" />
-                  </div>
-                  <span className="text-xs font-black uppercase tracking-[0.3em] text-slate-900 group-hover:text-amber-500 transition-colors">
-                    Watch the impact
-                  </span>
-                </button>
-              </div>
-            </motion.div>
-          </div>
-
-
-
+        {/* Center: The Power Typography */}
+        <div className="flex flex-col items-start">
+          <h1 className="w-full text-5xl font-extralight leading-[0.85] tracking-tighter text-white sm:text-7xl md:text-8xl lg:text-[9rem] xl:text-[11rem]">
+            Through <br />
+            <span className="italic font-serif text-[#FFD700]">Education</span>, <br />
+            We End <span className="font-bold">Poverty.</span>
+          </h1>
         </div>
-      </main>
 
-      {/* --- SCROLL INDICATOR --- */}
-      <motion.div 
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:block"
-      >
-        <div className="w-[1px] h-20 bg-gradient-to-b from-slate-900/10 to-amber-400" />
-      </motion.div>
-
-    </div>
+        {/* Bottom: Modern Footer Info */}
+        <div className="flex flex-col items-end justify-between gap-6 border-t border-white/10 pt-8 lg:flex-row lg:items-center">
+          <div className="flex items-center gap-6">
+            <div className="h-3 w-3 rounded-full border border-[#FFD700] flex items-center justify-center">
+               <div className="h-1 w-1 bg-[#FFD700] rounded-full animate-pulse"></div>
+            </div>
+            <p className="max-w-sm text-[10px] uppercase tracking-[0.2em] leading-relaxed text-neutral-400">
+              Transforming the marginalized landscape of North Bengaluru.
+            </p>
+          </div>
+          
+          {/* Visual anchor for the scroll */}
+          <div className="flex items-center gap-8">
+            <span className="text-[9px] font-black uppercase tracking-[0.5em] text-white/30">Begin Journey</span>
+            <div className="h-px w-24 bg-gradient-to-r from-[#FFD700] to-transparent"></div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 
-export default HyperPremiumHero;
+export default AboutHeroBalanced;

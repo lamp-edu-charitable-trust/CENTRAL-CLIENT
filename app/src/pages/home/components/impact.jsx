@@ -1,101 +1,80 @@
 import React from 'react';
-import { TrendingUp, Users, BookOpen, Heart } from 'lucide-react';
 
-const ImpactSection = () => {
-  // Data derived from provided student marksheet
-  const studentGrowth = [
-    { name: "Mithran .B", class: "1st", prev: 40, current: 85 },
-    { name: "S.Dinesh", class: "3rd", prev: 54, current: 82 },
-    { name: "Gautam", class: "4th", prev: 40, current: 75 },
-    { name: "Allan Liyaskar", class: "5th", prev: 55, current: 71 },
-  ];
-
+const DonationFinal = () => {
   return (
-    <section className="bg-white py-32 px-6 antialiased selection:bg-neutral-900 selection:text-white">
-      <div className="mx-auto max-w-7xl">
+    <section id="donate" className="relative w-full bg-[#0A192F] py-20 lg:py-0 antialiased overflow-hidden">
+      <div className="flex flex-col lg:flex-row min-h-[90dvh]">
         
-        {/* Header: Global Impact */}
-        <div className="mb-24 text-center">
-          <h2 className="text-[10px] uppercase tracking-[0.6em] text-neutral-400 mb-6 font-bold">Our Impact</h2>
-          <h3 className="text-5xl font-extralight tracking-tighter text-neutral-900 md:text-7xl">
-            2019 <span className="text-neutral-300">—</span> 2024
-          </h3>
-        </div>
-
-        {/* Global Metrics Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-neutral-100 border border-neutral-100 mb-40">
-          <div className="bg-white p-10 flex flex-col items-center text-center">
-            <Users className="text-neutral-200 mb-6" size={32} strokeWidth={1} />
-            <span className="text-4xl font-light tracking-tighter text-neutral-900">3,500+</span>
-            <p className="mt-4 text-[10px] uppercase tracking-widest text-neutral-500 leading-relaxed">
-              Students Trained in Soft Skills & Employability
-            </p>
-          </div>
-          <div className="bg-white p-10 flex flex-col items-center text-center">
-            <TrendingUp className="text-neutral-200 mb-6" size={32} strokeWidth={1} />
-            <span className="text-4xl font-light tracking-tighter text-neutral-900">100%</span>
-            <p className="mt-4 text-[10px] uppercase tracking-widest text-neutral-500 leading-relaxed">
-              Success Rate for Grades 5-12 with 76% Average
-            </p>
-          </div>
-          <div className="bg-white p-10 flex flex-col items-center text-center">
-            <BookOpen className="text-neutral-200 mb-6" size={32} strokeWidth={1} />
-            <span className="text-4xl font-light tracking-tighter text-neutral-900">35+</span>
-            <p className="mt-4 text-[10px] uppercase tracking-widest text-neutral-500 leading-relaxed">
-              Migrant Students Fluency in 3 Languages
-            </p>
-          </div>
-          <div className="bg-white p-10 flex flex-col items-center text-center">
-            <Heart className="text-neutral-200 mb-6" size={32} strokeWidth={1} />
-            <span className="text-4xl font-light tracking-tighter text-neutral-900">12,000+</span>
-            <p className="mt-4 text-[10px] uppercase tracking-widest text-neutral-500 leading-relaxed">
-              Items Distributed to Families in Need
+        {/* Left: The Visual Story */}
+        <div className="relative w-full lg:w-1/2 h-[400px] lg:h-auto overflow-hidden">
+          <img 
+            src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,fit=crop/AoPJX3eEk7uODbZ8/dsc03872-YbNJjWLrVGf4KMPK.JPG" 
+            alt="Smiling student with book" 
+            className="h-full w-full object-cover grayscale-[30%] opacity-60"
+          />
+          {/* Theme Gradient Overlay: Navy to Green */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0A192F] via-[#0A192F]/40 to-transparent"></div>
+          
+          <div className="absolute bottom-12 left-12 right-12">
+            <h2 className="text-4xl lg:text-6xl font-extralight tracking-tighter text-white leading-[0.9]">
+              Life is all about making <br />
+              <span className="italic font-serif text-[#FFD700]">an impact.</span>
+            </h2>
+            <p className="mt-6 max-w-sm text-sm tracking-widest uppercase text-white/50">
+              Make yours today.
             </p>
           </div>
         </div>
 
-        {/* Annual Performance: Academic Year 2024-2025 */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-start">
-          <div className="lg:col-span-4">
-            <h4 className="text-[10px] uppercase tracking-[0.4em] text-orange-600 mb-6 font-bold">Academic Year 24-25</h4>
-            <h3 className="text-4xl font-extralight tracking-tighter text-neutral-900 mb-8 leading-tight">
-              Evidence of <br /><span className="italic font-serif">Transformation</span>.
-            </h3>
-            <p className="text-sm text-neutral-500 leading-relaxed font-light mb-8">
-              We track progress meticulously. From failed grades to distinctions, our customized learning approach closes the gap in real-time. Full marksheets are available to our donors upon request.
+        {/* Right: The Action Center */}
+        <div className="w-full lg:w-1/2 flex items-center justify-center p-6 lg:p-24 bg-white">
+          <div className="max-w-xl w-full">
+            <p className="text-lg leading-relaxed text-[#0A192F]/70 mb-12">
+              You can change a student's entire life trajectory for the cost of a few coffees. Your investment provides a high-risk North Bengaluru student with targeted remedial education, digital upskilling, and a safe after-school haven through <span className="text-[#0A192F] font-bold">Project TRY.</span>
             </p>
-            <button className="text-[10px] font-bold uppercase tracking-[0.3em] border-b border-neutral-900 pb-2 hover:text-neutral-400 hover:border-neutral-400 transition-all">
-              Request Full Report
-            </button>
-          </div>
 
-          {/* Student Progress Bars */}
-          <div className="lg:col-span-8 space-y-12">
-            {studentGrowth.map((student, idx) => (
-              <div key={idx} className="relative">
-                <div className="flex justify-between items-end mb-4">
+            <div className="space-y-8">
+              {/* Option 1: The Everyday Donor */}
+              <div className="group relative border border-neutral-100 bg-[#FAFAFA] p-8 transition-all hover:border-[#FFD700] hover:shadow-2xl">
+                <div className="flex justify-between items-start mb-4">
                   <div>
-                    <span className="text-[9px] font-mono text-neutral-400 uppercase tracking-widest">Class {student.class} Student</span>
-                    <h5 className="text-lg font-medium text-neutral-900 uppercase tracking-tighter">{student.name}</h5>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-[#FFD700]">The Everyday Donor</span>
+                    <h3 className="text-3xl font-light text-[#0A192F] mt-2">The ₹916 Promise</h3>
                   </div>
-                  <div className="text-right">
-                    <span className="text-xs text-neutral-400 line-through mr-3">{student.prev}%</span>
-                    <span className="text-2xl font-light text-neutral-900">{student.current}%</span>
-                  </div>
+                  <span className="text-2xl">☕</span>
                 </div>
-                {/* Dual Progress Bar */}
-                <div className="h-[2px] w-full bg-neutral-100 relative">
-                  <div 
-                    className="absolute h-full bg-neutral-300 transition-all duration-1000" 
-                    style={{ width: `${student.prev}%` }}
-                  ></div>
-                  <div 
-                    className="absolute h-full bg-neutral-900 transition-all duration-1000 delay-300" 
-                    style={{ width: `${student.current}%` }}
-                  ></div>
-                </div>
+                <p className="text-sm text-neutral-500 mb-8 leading-relaxed">
+                  Sponsor one student's complete monthly journey from basic literacy to 21st-century tech skills.
+                </p>
+                <button className="w-full bg-[#0A192F] py-4 text-[11px] font-bold uppercase tracking-[0.3em] text-white transition-all hover:bg-[#1B4332]">
+                  Donate ₹916 / Month
+                </button>
               </div>
-            ))}
+
+              {/* Option 2: The Visionary Donor */}
+              <div className="group relative border border-[#2D6A4F]/20 bg-[#1B4332]/5 p-8 transition-all hover:bg-[#1B4332]/10">
+                <div className="flex justify-between items-start mb-4">
+                  <div>
+                    <span className="text-[10px] font-black uppercase tracking-widest text-[#2D6A4F]">The Visionary Donor</span>
+                    <h3 className="text-3xl font-light text-[#0A192F] mt-2">Adopt a Hub</h3>
+                  </div>
+                  <span className="text-2xl">🏢</span>
+                </div>
+                <p className="text-sm text-neutral-500 mb-8 leading-relaxed">
+                  Are you a Corporate CSR or HNI? Sponsor an entire After-School Hub for one year (<span className="font-bold text-[#0A192F]">₹5.5 Lakhs</span>) and impact 50+ students.
+                </p>
+                <button className="w-full border border-[#0A192F] py-4 text-[11px] font-bold uppercase tracking-[0.3em] text-[#0A192F] transition-all hover:bg-[#0A192F] hover:text-white">
+                  Partner With Us
+                </button>
+              </div>
+            </div>
+
+            {/* Trust Footer */}
+            <div className="mt-12 flex items-center justify-between opacity-40">
+              <span className="text-[9px] font-bold uppercase tracking-widest">Lamp Trust • 2026</span>
+              <div className="h-px w-24 bg-neutral-300"></div>
+              <span className="text-[9px] font-bold uppercase tracking-widest">Secure Payment</span>
+            </div>
           </div>
         </div>
 
@@ -104,4 +83,4 @@ const ImpactSection = () => {
   );
 };
 
-export default ImpactSection;
+export default DonationFinal;
